@@ -22,8 +22,9 @@ RUN \
     apt-get clean && \
     rm -rf \
     /tmp/* \
-    /var/tmp/* \
-    chmod a+x /app/terraria/bin/TerrariaServer.bin.x86_64
+    /var/tmp/*
+
+COPY root/ /
 
 # ports and volumes
 EXPOSE 7777
