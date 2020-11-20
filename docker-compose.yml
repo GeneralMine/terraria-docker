@@ -10,6 +10,6 @@ services:
     environment: 
       - "WORLD_FILENAME=Baldurun.wld"
     ports:
-      - 7777:7777
+      - 28754:7777
     volumes:
       - ./world:/root/.local/share/Terraria/Worlds
