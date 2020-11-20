@@ -4,14 +4,11 @@ services:
   terraria:
     container_name: terraria
     image: generalmine/terraria-docker
-    environment:
-      PUID: "<PROCESS UID>"
-      PGID: "<PROCESS GID>"
     restart: always
     stdin_open: true
     tty: true
     ports:
       - 7777:7777
     volumes:
-      - <PATH TO WORLDS>:/world
-      - <PATH TO CONFIG>:/config
+      - ./world:/world
+      - ./config:/config
