@@ -24,8 +24,6 @@ RUN \
     /tmp/* \
     /var/tmp/*
 
-COPY root/ /
-
 # ports and volumes
 EXPOSE 7777
 VOLUME ["/world","/config"]
