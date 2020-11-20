@@ -24,9 +24,11 @@ RUN \
     /tmp/* \
     /var/tmp/*
 
+COPY root/ /
+
 # ports and volumes
 EXPOSE 7777
 VOLUME ["/world","/config"]
 
 ENTRYPOINT ["/init"]
-CMD ["/usr/bin/with-contenv", "s6-setuidgid", "terraria", "/app/terraria/bin/TerrariaServer.bin.x86_64", "-config", "/config/serverconfig.txt"]
+CMD ["sudo", "/usr/bin/with-contenv", "s6-setuidgid", "terraria", "/app/terraria/bin/TerrariaServer.bin.x86_64", "-config", "/config/serverconfig.txt"]
