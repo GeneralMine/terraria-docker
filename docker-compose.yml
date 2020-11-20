@@ -1,17 +1,15 @@
-version: '2.0'
+version: '3.0'
 
 services:
   terraria:
     container_name: terraria
-    build: .
-    environment:
-      PUID: "12345"
-      PGID: "12345"
-    restart: always
+    image: ryshe/terraria:latest
+    restart: unless-stopped
     stdin_open: true
     tty: true
+    environment: 
+      - "WORLD_FILENAME=Baldurun.wld"
     ports:
       - 7777:7777
     volumes:
-      - ./world:/world
-      - ./config:/config
+      - ./world:/root/.local/share/Terraria/Worlds
